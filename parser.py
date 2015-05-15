@@ -53,7 +53,7 @@ class RSStoTGbot(object):
 
     def download(self, link):
         filename = config.togroup + "-" + link.split('/')[-1]
-        r = requests.get(link, headers=header)
+        r = requests.get(link)
         with open("downloads/"+filename, 'wb') as f:
             for chunk in r.iter_content(chunk_size=1024):
                 if chunk:
